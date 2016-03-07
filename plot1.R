@@ -1,0 +1,6 @@
+dataT <- read.table('household_power_consumption.txt', header = T,sep=';')
+dataT$Date <- strptime(dataT$Date, format = "%d/%m/%Y")
+dataT <- subset(dataT, (Date >= "2007-02-01" & Date <= "2007-02-02"))
+hist(workdata$Global_active_power, col = "red", xlab = "Global Active Power (kilowatts)", main = "Global Active Power", axes = FALSE)
+axis(2, xaxp = c(0,1200,6), las = 3)
+axis(1, xaxp = c(0,3,3), las = 1)
